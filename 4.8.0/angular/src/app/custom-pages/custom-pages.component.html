@@ -1,0 +1,40 @@
+<!-- <p>custom-pages works!</p> -->
+
+<!-- <input [ngModel]="page.title" (ngModelChange)="page.title = $event"> -->
+
+<!-- <h1 *ngIf="pageState=='view'">{{page.title}}</h1>
+<h3 *ngIf="pageState=='view'">{{page.content}}</h3> -->
+<!-- <input matInput [placeholder]="Filter" [(ngModel)]="page.title" name="keyword">
+<p>page.content</p>
+<span id="message" title="page.content" style="font-style: italic; color: #FF0000;">This city is beautiful!</span>
+
+<ng-template ngFor let-pagess [ngForOf]="pagesss" let-mainMenuItemIndex="index">
+        <p>pagess.content</p>
+</ng-template> -->
+<div >
+        <button mat-fab color="warn" (click)="deletePage()" [ngClass]="{'visibility-none':!(canDeletePage && pageState=='view')}" class="margin-bottom-24px float-right" aria-label="">
+                <mat-icon>delete</mat-icon>
+        </button>
+        <h1 *ngIf="canAddPage && pageState=='add'"  mat-dialog-title>{{ "Add New Page" | localize }}</h1>
+        <form  class="page-form"   >
+
+                <input   [disabled]="pageState=='view' || isResponsePending" required  maxlength="25" class="page-title" matInput  placeholder="Page Title*" [(ngModel)]="page.title" name="Title"> 
+                <div [busy]="isResponsePending">
+                        <textarea [disabled]="pageState=='view'"  class="page-content" matInput placeholder="Page Content" [(ngModel)]="page.content" name="Content"></textarea>
+                </div>
+        </form>
+        <button  *ngIf="canEditPage && pageState=='view'"  class="float-right margin-top-16px" (click)="editPage()" mat-raised-button color="primary">Edit Page</button>
+        <button *ngIf="canEditPage && pageState=='edit'"   class="float-right margin-top-16px" (click)="addOrUpdatePage()" mat-raised-button color="accent">save changes</button>
+        <button *ngIf="canAddPage && pageState=='add'"  class="float-right margin-top-16px" (click)="addOrUpdatePage()" mat-raised-button color="primary">Add Page</button>
+</div> 
+    <!-- <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <mat-label></mat-label>
+                  <input matInput placeholder="Ex. Pizza" value="Sushi">
+                </mat-form-field>
+              
+                <mat-form-field class="example-full-width">
+                  <mat-label></mat-label>
+                  <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                </mat-form-field>
+              </form>     -->

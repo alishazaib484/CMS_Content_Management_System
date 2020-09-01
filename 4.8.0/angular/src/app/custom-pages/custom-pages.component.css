@@ -1,0 +1,31 @@
+
+.page-title{
+    font-size: 30px;
+    width: -webkit-fill-available;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.page-content{
+    
+    font-size: 24px;
+    width: -webkit-fill-available;
+    font-weight: normal;
+    height: 380px;
+}
+.float-right{
+    float: right !important;
+}
+.margin-bottom-24px{
+    margin-bottom: 24px !important;
+}
+.margin-top-16px{
+    margin-top: 16px !important;
+}
+
+.visibility-none{
+    visibility: hidden;
+}
+.zero-opacity{
+    opacity: 0 !important;
+}
